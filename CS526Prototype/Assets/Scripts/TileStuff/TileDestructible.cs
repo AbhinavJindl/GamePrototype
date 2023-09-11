@@ -6,14 +6,14 @@ using UnityEngine.Tilemaps;
 
 public class TileDestructible : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    //Spacing of each tile
+    [SerializeField] private string destructString;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Destroy(gameObject);
+        if (col.gameObject.CompareTag(destructString))
+        {
+            Destroy(gameObject);
+        }
     }
 }

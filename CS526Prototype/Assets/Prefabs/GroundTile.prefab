@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498f5493a5f24af499d3b333d5aa33ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructString: Bullet
