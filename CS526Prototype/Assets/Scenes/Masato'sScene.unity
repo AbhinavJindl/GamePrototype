@@ -573,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1038905556}
   wallTag: Wall
-  bounceTag: 
+  bounceTag: Destructible
 --- !u!50 &1038905556
 Rigidbody2D:
   serializedVersion: 4
