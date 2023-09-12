@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class PlayerControllerTest : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rigidbody;
 
+    //floats for movement
     private float vert;
-
     private float horiz;
+
+    [SerializeField] private string wallTag;
+    [SerializeField] private string bounceTag;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,23 @@ public class PlayerControllerTest : MonoBehaviour
     {
         vert = Input.GetAxis("Vertical");
         horiz = Input.GetAxis("Horizontal");
-       
     }
 
     void FixedUpdate()
     {
         Vector2 pos = new Vector2(horiz, vert);
-        rb.MovePosition(rb.position + pos * Time.deltaTime * 40);
+        rigidbody.MovePosition(rigidbody.position + pos * Time.deltaTime * 40);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag(wallTag))
+        {
+            Destroy(gameObject);
+        }
+        else if (col.gameObject.CompareTag(bounceTag))
+        {
+            
+        }
     }
 }
