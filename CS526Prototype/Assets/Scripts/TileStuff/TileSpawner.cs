@@ -13,6 +13,9 @@ public class TileSpawner : MonoBehaviour
     //tile prefab
     [SerializeField] private GameObject tile;
     
+    //position of player to make sure blocks don't spawn on player
+    [SerializeField] private Transform playerInitialPosition;
+    
     void Start()
     {
         Vector3 location = new Vector3(gridSize * tileSize, gridSize * tileSize);
@@ -20,7 +23,12 @@ public class TileSpawner : MonoBehaviour
         {
             for (int j = 0; j <= gridSize * 2; j++)
             {
-                Instantiate(tile, location, Quaternion.identity);
+                Vector3 difference = playerInitialPosition.position - location;
+                if (difference.magnitude > tileSize * 2)
+                {
+                    Instantiate(tile, location, Quaternion.identity);
+                }
+                
                 location.x -= tileSize;
             }
 
