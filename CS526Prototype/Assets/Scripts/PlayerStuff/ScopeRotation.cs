@@ -9,10 +9,16 @@ public class ScopeRotation : MonoBehaviour
 
     void Update()
     {
-        // Get vertical input.
-        float verticalInput = Input.GetAxis("Vertical");
+        // Get the world position of the mouse.
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Rotate child around the parent's position.
-        childToRotate.RotateAround(transform.position, Vector3.forward, verticalInput * rotationSpeed * Time.deltaTime);
+        // Find the direction vector from the object to the mouse.
+        Vector2 directionToMouse = (Vector2)transform.position - mousePosition;
+
+        // Calculate the angle between the object and the mouse.
+        float angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
+
+        // Rotate the object to face the mouse.
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

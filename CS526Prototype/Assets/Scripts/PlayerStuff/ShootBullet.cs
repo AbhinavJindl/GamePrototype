@@ -20,12 +20,5 @@ public class ShootBullet : MonoBehaviour
     {
         // Instantiate a new bullet.
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
-        // Add force to the bullet to move it.
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.velocity = bulletSpeed * bulletSpawnPoint.up;
-        }
     }
 }
