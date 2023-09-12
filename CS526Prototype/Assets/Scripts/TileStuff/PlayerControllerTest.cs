@@ -35,11 +35,11 @@ public class PlayerControllerTest : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag(wallTag))
+        if (wallTag != "" && col.gameObject.CompareTag(wallTag))
         {
             Destroy(gameObject);
         }
-        else if (col.gameObject.CompareTag(bounceTag))
+        else if (bounceTag != "" && col.gameObject.CompareTag(bounceTag))
         {
             
         }
