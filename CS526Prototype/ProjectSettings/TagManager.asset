@@ -9,6 +9,7 @@ TagManager:
   - Destructible
   - Bounce
   - Lethal
+  - Obstacle
   layers:
   - Default
   - TransparentFX
