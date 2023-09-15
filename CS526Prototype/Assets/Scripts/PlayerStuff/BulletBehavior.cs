@@ -7,6 +7,7 @@ public class BulletBehavior : MonoBehaviour
     
     [SerializeField] private string wallTag;
     [SerializeField] private string bounceTag;
+    [SerializeField] private string lethalTag;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -21,6 +22,11 @@ public class BulletBehavior : MonoBehaviour
             normal.Normalize();
             Vector3 reflectVec = transform.up - 2 * Vector3.Dot(transform.up, normal) * normal;
             transform.up = reflectVec;
+        }
+        else if (lethalTag != "" && col.gameObject.CompareTag(lethalTag))
+        {
+            GameManager.Instance.playerHealth.Die();
+            Destroy(gameObject);
         }
     }
 }

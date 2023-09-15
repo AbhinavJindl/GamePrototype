@@ -178,3 +178,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallTag: Wall
   bounceTag: Bounce
+  lethalTag: Lethal
