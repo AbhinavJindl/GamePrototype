@@ -25,7 +25,7 @@ public class BulletBehavior : MonoBehaviour
         }
         else if (lethalTag != "" && col.gameObject.CompareTag(lethalTag))
         {
-            GameManager.Instance.playerHealth.Die();
+            GameManager.Instance.Die();
             Destroy(gameObject);
         }
     }

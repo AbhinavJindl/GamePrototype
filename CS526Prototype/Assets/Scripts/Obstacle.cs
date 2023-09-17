@@ -36,7 +36,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.playerHealth.Die();
+            GameManager.Instance.Die();
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
