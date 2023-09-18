@@ -6,11 +6,10 @@ public class ScopeRotation : MonoBehaviour
 {
     public float rotationSpeed = 30.0f; // Speed of the rotation.
     public Transform childToRotate;
-    private bool isOver = false;
     void Update()
     {
         //check if game is over
-        if (isOver)
+        if (GameManager.Instance.isOver)
             return;
         
         // Get the world position of the mouse.
@@ -24,10 +23,5 @@ public class ScopeRotation : MonoBehaviour
 
         // Rotate the object to face the mouse.
         transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
-    
-    public void GameOver()
-    {
-        isOver = true;
     }
 }

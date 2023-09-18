@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI gameWinText;
-    [SerializeField] private PlayerMovement _playerMovement;
-    [SerializeField] private ScopeRotation _scopeRotation;
+    public bool isOver = false;
     public static GameManager Instance
     {
         get
@@ -43,16 +42,14 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        isOver = true;
         ShowGameOver();
-        _playerMovement.GameOver();
-        _scopeRotation.GameOver();
     }
 
     public void Win()
     {
+        isOver = true;
         ShowGameWin();
-        _playerMovement.GameOver();
-        _scopeRotation.GameOver();
     }
     
     private void HideGameOver()

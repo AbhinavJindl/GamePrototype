@@ -9,7 +9,8 @@ public class ShootBullet : MonoBehaviour
 
     void Update()
     {
-        
+        if (GameManager.Instance.isOver)
+            return;
         if (Input.GetButtonDown("Fire1")) // Fire1 is usually the left mouse button.
         {
             if (BulletCountManager.instance.BulletsLeft())
