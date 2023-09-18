@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerControllerTest : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private Rigidbody2D rb;
 
     //floats for movement
     private float vert;
@@ -30,7 +30,7 @@ public class PlayerControllerTest : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 pos = new Vector2(horiz, vert);
-        rigidbody.MovePosition(rigidbody.position + pos * Time.deltaTime * 40);
+        rb.MovePosition(rb.position + pos * Time.deltaTime * 40);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

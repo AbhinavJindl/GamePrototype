@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI gameWinText;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private ScopeRotation _scopeRotation;
     public static GameManager Instance
     {
         get
@@ -25,16 +29,7 @@ public class GameManager : MonoBehaviour
     {
         _instance = this;
         HideGameOver();
-    }
-
-    public void HideGameOver()
-    {
-        gameOverText.gameObject.SetActive(false);
-    }
-
-    public void ShowGameOver()
-    {
-        gameOverText.gameObject.SetActive(true);
+        HideGameWin();
     }
 
     // Update is called once per frame
@@ -49,5 +44,33 @@ public class GameManager : MonoBehaviour
     public void Die()
     {
         ShowGameOver();
+        _playerMovement.GameOver();
+        _scopeRotation.GameOver();
+    }
+
+    public void Win()
+    {
+        ShowGameWin();
+        _playerMovement.GameOver();
+        _scopeRotation.GameOver();
+    }
+    
+    private void HideGameOver()
+    {
+        gameOverText.gameObject.SetActive(false);
+    }
+
+    private void ShowGameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
+    }
+    private void HideGameWin()
+    {
+        gameWinText.gameObject.SetActive(false);
+    }
+
+    private void ShowGameWin()
+    {
+        gameWinText.gameObject.SetActive(true);
     }
 }
