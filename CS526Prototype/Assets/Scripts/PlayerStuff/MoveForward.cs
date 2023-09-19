@@ -13,12 +13,11 @@ public class MoveForward : MonoBehaviour
     {
         StartCoroutine(Die());
     }
-
-    void Update()
+    private void FixedUpdate()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
-    
+
     IEnumerator Die()
     {
         yield return new WaitForSeconds(lifetime);

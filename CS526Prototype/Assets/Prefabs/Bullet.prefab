@@ -179,3 +179,4 @@ MonoBehaviour:
   wallTag: Wall
   bounceTag: Bounce
   lethalTag: Lethal
+  _moveForward: {fileID: 7856000099483336807}
