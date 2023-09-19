@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 
 public class GameManager : MonoBehaviour
 {
+    public string nextLevelName;
     private static GameManager _instance;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI gameWinText;
@@ -37,6 +37,26 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("TutorialLevel");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("WallsLevel");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SceneManager.LoadScene("ObstacleLevel");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SceneManager.LoadScene("4thLevelScene");
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene(nextLevelName);
         }
     }
 

@@ -1198,6 +1198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManagerWithUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3988830580500721217, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
+      propertyPath: nextLevelName
+      value: ObstacleLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 5122115730434680397, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
