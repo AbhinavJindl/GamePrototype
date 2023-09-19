@@ -25,6 +25,7 @@ public class BulletBehavior : MonoBehaviour
             normal.Normalize();
             Vector3 reflectVec = transform.up - 2 * Vector3.Dot(transform.up, normal) * normal;
             transform.up = reflectVec;
+            StartCoroutine(ResetBullet());
         }
         else if (wallTag != "" && col.gameObject.CompareTag(wallTag))
         {
@@ -43,7 +44,12 @@ public class BulletBehavior : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
         yield return null;
+    }
+
+    IEnumerator ResetBullet()
+    {
+        yield return new WaitForSeconds(0.02f);
+        isBouncing = false;
     }
 }
