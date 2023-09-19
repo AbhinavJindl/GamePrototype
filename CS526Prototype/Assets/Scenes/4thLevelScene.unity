@@ -548,7 +548,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6243403334327688809, guid: 079f6661cf8cbfe4387602e14c641ad4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 6243403334327688809, guid: 079f6661cf8cbfe4387602e14c641ad4, type: 3}
       propertyPath: m_LocalScale.y
@@ -1483,7 +1483,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6243403334327688809, guid: 079f6661cf8cbfe4387602e14c641ad4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 6243403334327688809, guid: 079f6661cf8cbfe4387602e14c641ad4, type: 3}
       propertyPath: m_LocalScale.y
@@ -2250,6 +2250,18 @@ PrefabInstance:
     - target: {fileID: 1540263546716763299, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
       propertyPath: m_Name
       value: GameManagerWithUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603997438154749115, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603997438154749115, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603997438154749115, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3988830580500721217, guid: 4f0b2fbdba8055547b27840aec0d8ae3, type: 3}
       propertyPath: gameWinText
