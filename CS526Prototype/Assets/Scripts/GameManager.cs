@@ -11,7 +11,10 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI gameWinText;
+    public TextMeshProUGUI outOfBulletsText;
     public bool isOver = false;
+    private bool isWon = false;
+    private float timer = 2.0f;
     public static GameManager Instance
     {
         get
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
         _instance = this;
         HideGameOver();
         HideGameWin();
+        HideNoBullets();
     }
 
     // Update is called once per frame
@@ -48,15 +52,31 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene("ObstacleLevel");
+            SceneManager.LoadScene("PreObstacleLevel");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
+            SceneManager.LoadScene("ObstacleLevel");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             SceneManager.LoadScene("4thLevelScene");
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && isWon)
         {
             SceneManager.LoadScene(nextLevelName);
+        }
+
+        if (timer > 0.0f)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            if (outOfBulletsText.gameObject.activeSelf)
+            {
+                HideNoBullets();
+            }
         }
     }
 
@@ -69,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         isOver = true;
+        isWon = true;
         ShowGameWin();
     }
     
@@ -89,5 +110,15 @@ public class GameManager : MonoBehaviour
     private void ShowGameWin()
     {
         gameWinText.gameObject.SetActive(true);
+    }
+    
+    private void HideNoBullets()
+    {
+        outOfBulletsText.gameObject.SetActive(false);
+    }
+    public void ShowNoBullets()
+    {
+        outOfBulletsText.gameObject.SetActive(true);
+        timer = 2.0f;
     }
 }

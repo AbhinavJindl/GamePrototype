@@ -19,6 +19,10 @@ public class ShootBullet : MonoBehaviour
                 Shoot();
 
             }
+            else
+            {
+                GameManager.Instance.ShowNoBullets();
+            }
         }
         
     }

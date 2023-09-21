@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WallsLevel.unity
     guid: d4736969d47b348468d140c03f171b44
   - enabled: 1
+    path: Assets/Scenes/PreObstacleLevel.unity
+    guid: 1f446e02dccfae34984e8c252b215b80
+  - enabled: 1
     path: Assets/Scenes/ObstacleLevel.unity
     guid: 58d5e09d25503bd4395d30e01bdd2213
   - enabled: 1
