@@ -82,12 +82,16 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        if (isOver)
+            return;
         isOver = true;
         ShowGameOver();
     }
 
     public void Win()
     {
+        if (isOver)
+            return;
         isOver = true;
         isWon = true;
         ShowGameWin();
